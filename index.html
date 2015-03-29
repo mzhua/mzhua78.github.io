@@ -1,31 +1,37 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html ng-app="deerResume">
 <head>
-<title>Hua</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
- <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico" />
-<style type="text/css">
-    div{
-        margin:150px;
-        }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeerResume</title>
+  <link href="image/browser.png" rel="shortcut icon">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/yue.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="bower/components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower/components/ng-notify/dist/ng-notify.min.css">
+  <script src="bower/components/jquery/dist/jquery.min.js"></script>
+  <script src="bower/components/angular/angular.min.js"></script>
+  <script src="bower/components/angular-route/angular-route.min.js"></script>
+  <script src="bower/components/angular-sanitize/angular-sanitize.min.js"></script>
+  <script src="bower/components/showdown/compressed/showdown.js"></script>
+  <script src="bower/components/ng-notify/dist/ng-notify.min.js"></script>
+  <script src="js/wizMarkdown.min.js"></script>
+  <script src="js/jspdf.min.js"></script>
+  <script src="js/jspdf.plugin.addhtml.js"></script>
+  <script src="bower/components/angular-cookies/angular-cookies.min.js"></script>
+  <script src="bower/components/angularLocalStorage/src/angularLocalStorage.js"></script>
+  <script src="js/app.js"></script>
 </head>
-
 <body>
-    <div>
-        <image src="https://avatars1.githubusercontent.com/u/4736375?s=400" width="106px" height="106px" title="鸣人"/>
-        <h1>
-            <a href="https://github.com/mzhua?tab=repositories" >点击进入我的 repositories </a>
-            <br>
-            下面是我的两个小应用
-            <br>
-            <a href="http://pan.baidu.com/s/1kTh19ER" >Flybo 微博 </a>
-            <br>
-            <a href="http://pan.baidu.com/s/1sjFfuyT" >EmailAlarm 监听你的剪切板，自动创建提醒 </a>
-         </h1>
-         
-    </div>
-    
-    
+  <base target="_blank">
+  <div ng-view id="resume_body"></div>
+  <form action="http://pdf.ftqq.com" method="post" target="_blank" id="hform">
+    <input type="hidden" name="title"/>
+    <input type="hidden" name="subtitle"/>
+    <input type="hidden" name="content"/>
+    <input type="hidden" name="pdfkey"/>
+  </form>  
 </body>
+
 </html>
